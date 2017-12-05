@@ -1,5 +1,5 @@
 export default function() {
-
+  this.logging = true;
   // These comments are here to help you get started. Feel free to delete them.
 
   /*
@@ -12,6 +12,11 @@ export default function() {
   // this.namespace = '';    // make this `/api`, for example, if your API is namespaced
   // this.timing = 400;      // delay for each request, automatically set to 0 during testing
 
+
+  this.get('/events');
+  this.put('/events');
+  this.post('/events');
+  
   /*
     Shorthand cheatsheet:
 
