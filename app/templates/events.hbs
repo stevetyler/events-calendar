@@ -1,1 +1,11 @@
 
+{{#events-week}}
+  {{#each days as |day|}}
+    {{#events-day}}
+      {{#events-day-title}}
+        <h2>{{day}}</h2>
+      {{/events-day-title}}
+      {{#events-day-body}}{{/events-day-body}}
+    {{/events-day}}
+  {{/each}}
+{{/events-week}}
