@@ -1,5 +1,7 @@
 
-<div class="main-container">
+<main>
+  <h1>Events Calendar</h1>
+  
   {{#events-week as |week|}}
     {{#each dayNames as |dayName|}}
       {{#week.day as |day|}}
@@ -7,10 +9,11 @@
           <h3>{{dayName}}</h3>
         {{/day.title}}
         {{#day.body}}
+          {{!event-entry}}
         {{/day.body}}
       {{/week.day}}
     {{/each}}
   {{/events-week}}
 
   {{create-event}}
-</div>
+</main>

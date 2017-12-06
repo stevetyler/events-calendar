@@ -1,23 +1,16 @@
 body {
   font-family: 'helvetica', 'sans-serif';
+  font-size: small;
 }
 
-h2 {
-  font-size: 18px;
-}
-
-h3 {
-  font-size: 15px;
-}
-
-.main-container {
-  margin: 50px 25px;
+main {
+  margin: 0 25px;
+  overflow: hidden;
 }
 
 .week {
   display: flex;
   flex-wrap: nowrap;
-  text-align: center;
   /*max-width: 1050px;*/
   border-left: 1px solid #BBB;
   border-top: 1px solid #BBB;
@@ -40,7 +33,20 @@ h3 {
 }
 
 .day-body {
+  display: flex;
+  align-items: stretch;
+  padding: 10px 0 0 10px;
+}
 
+.event-entry {
+  /*position: absolute;*/
+  /*display: flex;*/
+  padding: 0 10px;
+  font-size: 14px;
+  width: 60px;
+  height: 50px;
+  background-color: orange;
+  border: 1px solid #BBB;
 }
 
 .create-event {
