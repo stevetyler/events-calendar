@@ -59,3 +59,10 @@ main {
 .create-event input, .create-event select {
   margin-bottom: 20px;
 }
+
+.create-event button {
+  display: block;
+  width: 75px;
+  height: 30px;
+  margin: 20px 0 0;
+}

@@ -1,11 +1,14 @@
 
 <h2>Create New Event</h2>
 
-<form>
+<form onsubmit={{action 'saveEvent'}}>
   {{select-date label="Start"}}
   {{select-date label="End"}}
   <textarea cols="35" rows="10" placeholder="Description"></textarea>
+
+  <button type=onsubmit>Save</button>
 </form>
+
 
 {{#if isCreateEventVisible}}
 {{/if}}
