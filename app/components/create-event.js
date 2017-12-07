@@ -21,6 +21,10 @@ export default Ember.Component.extend({
   store: service(),
 
   actions: {
+    clearSelections() {
+      this.set('selectedStartDate', null);
+      this.set('selectedEndDate', null);
+    },
     saveEvent() {
       this.get('newEvent').save().then(() => {
         const cleanRecord = this.get('store').createRecord('event');

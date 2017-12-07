@@ -37,8 +37,6 @@
       {{moment-format date 'dddd'}}
   {{/power-select}}
 
-  {{!textarea cols="35" rows="10" placeholder="description" value=newEvent.title}}
-
   <button type="submit" class="save">Save</button>
-  <button type="reset">Clear</button>
+  <button type="reset" onclick={{action 'clearSelections'}}>Clear</button>
 </form>
