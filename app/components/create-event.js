@@ -1,11 +1,40 @@
 import Ember from 'ember';
+import moment from 'moment';
+const { inject: { service }, computed } = Ember;
 
 export default Ember.Component.extend({
+  init(...args) {
+    this._super(...args);
+    this.newEvent = this.get('store').createRecord('event');
+  },
   classNames: ['create-event'],
-  actions: {
-    saveEvent(event) {
-      event.preventDefault();
+  filteredWeekDates: computed('selectedStartDate', function() {
+    let selectedStartDate = this.get('selectedStartDate');
 
+    if (selectedStartDate) {
+      let weekDates = this.get('weekDates');
+      let selectedDateIndex = weekDates.indexOf(selectedStartDate);
+
+      return weekDates.slice(selectedDateIndex, weekDates.length);
+    }
+  }),
+  store: service(),
+
+  actions: {
+    saveEvent() {
+      this.get('newEvent').save().then(() => {
+        const cleanRecord = this.get('store').createRecord('event');
+
+        this.setProperties({
+          newEvent: cleanRecord,
+          selectedStartDate: null,
+          selectedEndDate: null
+        });
+      });
+    },
+    setDate(type, date) {
+      this.set(`selected${type.classify()}`, date);
+      this.set(`newEvent.${type}`, moment(date).toDate());
     }
   }
 });
