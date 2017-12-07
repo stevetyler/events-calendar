@@ -4,14 +4,14 @@ body {
 }
 
 main {
-  margin: 0 25px;
+  width: 1050px;
+  margin: 0 auto;
   overflow: hidden;
 }
 
 .week {
   display: flex;
   flex-wrap: nowrap;
-  min-width: 1050px;
   border-left: 1px solid #BBB;
   border-top: 1px solid #BBB;
   border-bottom: 1px solid #BBB;
@@ -26,6 +26,10 @@ main {
   background-color: #e0e8e8;
 }
 
+.day h3, h4 {
+  margin: 10px;
+}
+
 .day-title {
   text-align: center;
   border-bottom: 1px solid #BBB;
@@ -35,28 +39,60 @@ main {
 
 .day-body {
   display: flex;
+  flex-direction: column;
   align-items: stretch;
   padding: 10px 0 0 10px;
 }
 
-.event-entries {
+.entries {
   /*position: absolute;*/
-  /*display: flex;*/
+  display: flex;
   font-size: 12px;
 }
 
-.event-entries .entry {
+.entry {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
   margin-bottom: 10px;
-  padding: 5px 10px 5px;
+  padding: 5px 0 5px 10px;
   background-color: orange;
   border: 1px solid #BBB;
 }
 
-.event-entries h4 {
+.entry.days-1 {
+  width: 120px;
+}
+
+.entry.days-2 {
+  width: 270px;
+}
+
+.entry.days-3 {
+  width: 420px;
+}
+
+.entry.days-4 {
+  width: 570px;
+}
+
+.entry.days-5 {
+  width: 720px
+}
+
+.entry.days-6 {
+  width: 870px;
+}
+
+.entry.days-7 {
+  width: 1020px;
+}
+
+.entries h4 {
   margin: 0;
 }
 
-.event-entries span {
+.entries span {
   display: block;
   margin: 8px 0;
 }

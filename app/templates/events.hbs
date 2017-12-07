@@ -7,7 +7,7 @@
       {{#events-day as |day|}}
         {{#day.title}}
           <h3>{{moment-format date 'dddd'}}</h3>
-          <h3>{{moment-format date 'DD-MM-YYYY'}}</h3>
+          <h4>{{moment-format date 'DD-MM-YYYY'}}</h4>
         {{/day.title}}
         {{#day.body}}
           {{event-entries
