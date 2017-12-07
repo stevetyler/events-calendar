@@ -22,13 +22,16 @@ main {
   display: flex;
   flex-direction: column;
   width: calc(100% / 7);
-  height: 250px;
   border-right: 1px solid #BBB;
   background-color: #e0e8e8;
 }
 
-.day h3, h4 {
-  margin: 10px;
+.day.is-current-day {
+  /*outline: 1px solid red;*/
+}
+
+.day.is-current-day h3 {
+  color: green;
 }
 
 .day-title {
@@ -48,46 +51,60 @@ main {
 .entries {
   /*position: absolute;*/
   display: flex;
+  flex-direction: column;
   font-size: 12px;
 }
 
 .entry {
-  position: absolute;
+  /*position: absolute;*/
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
   padding: 5px 0 5px 10px;
   background-color: orange;
+  opacity: 1;
   border: 1px solid #BBB;
   word-wrap: break-word;
 }
 
+.entry.is-selected {
+  opacity: 1;
+  z-index: 100;
+}
+
 .entry.days-1 {
   width: 120px;
+  /*z-index: 1;*/
 }
 
 .entry.days-2 {
   width: 270px;
+  /*z-index: 1;*/
 }
 
 .entry.days-3 {
   width: 420px;
+  /*z-index: 1;*/
 }
 
 .entry.days-4 {
   width: 570px;
+  /*z-index: 1;*/
 }
 
 .entry.days-5 {
-  width: 720px
+  width: 720px;
+  /*z-index: 1;*/
 }
 
 .entry.days-6 {
   width: 870px;
+  /*z-index: 1;*/
 }
 
 .entry.days-7 {
   width: 1020px;
+  /*z-index: 1;*/
 }
 
 .entries h4 {
