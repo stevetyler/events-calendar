@@ -11,15 +11,12 @@ export default DS.Model.extend({
   title: attr('string'),
   teacher: attr('string'),
   subject: attr('string'),
-
-  //dayDuration: 1,
   dayDuration: computed('startDate', 'endDate', function() {
     let start = moment(this.get('startDate'));
     let end = moment(this.get('endDate'));
     let duration = moment.duration(end.diff(start));
     let dayDuration = duration.asDays();
 
-    //debugger;
     return Math.floor(dayDuration) + 1;
   })
 });
