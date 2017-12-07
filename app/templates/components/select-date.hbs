@@ -2,11 +2,10 @@
 <label for={{label}}>{{label}} date</label>
 
 <select name="day" id={{label}}>
-  <option value="Monday">Monday</option>
-  <option value="Tuesday">Tuesday</option>
-  <option value="Wednesday">Wednesday</option>
-  <option value="Thursday">Thursday</option>
-  <option value="Friday">Friday</option>
-  <option value="Saturday">Saturday</option>
-  <option value="Sunday">Sunday</option>
+  {{#each weekDates as |date|}}
+    <option value={{date}}>
+      {{moment-format date 'dddd'}}
+    </option>
+  {{/each}}
+
 </select>
