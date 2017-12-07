@@ -11,7 +11,7 @@ main {
 .week {
   display: flex;
   flex-wrap: nowrap;
-  /*max-width: 1050px;*/
+  min-width: 1050px;
   border-left: 1px solid #BBB;
   border-top: 1px solid #BBB;
   border-bottom: 1px solid #BBB;
