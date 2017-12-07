@@ -6,10 +6,11 @@ body {
 main {
   width: 1050px;
   margin: 0 auto;
-  overflow: hidden;
 }
 
 .week {
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-wrap: nowrap;
   border-left: 1px solid #BBB;
@@ -58,6 +59,7 @@ main {
   padding: 5px 0 5px 10px;
   background-color: orange;
   border: 1px solid #BBB;
+  word-wrap: break-word;
 }
 
 .entry.days-1 {
