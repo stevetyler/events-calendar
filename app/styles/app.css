@@ -18,6 +18,8 @@ main {
 }
 
 .day {
+  display: flex;
+  flex-direction: column;
   width: calc(100% / 7);
   height: 250px;
   border-right: 1px solid #BBB;
@@ -25,8 +27,7 @@ main {
 }
 
 .day-title {
-  display: flex;
-  justify-content: center;
+  text-align: center;
   border-bottom: 1px solid #BBB;
   background-color: #15283f;
   color: white;
