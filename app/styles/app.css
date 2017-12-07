@@ -39,18 +39,25 @@ main {
   padding: 10px 0 0 10px;
 }
 
-.event-entry {
+.event-entries {
   /*position: absolute;*/
   /*display: flex;*/
-  padding: 0 10px;
   font-size: 12px;
-  /*width: 60px;
-  height: 50px;*/
+}
+
+.event-entries .entry {
+  margin-bottom: 10px;
+  padding: 5px 10px 5px;
   background-color: orange;
   border: 1px solid #BBB;
 }
 
-.event-entry h4 {
+.event-entries h4 {
+  margin: 0;
+}
+
+.event-entries span {
+  display: block;
   margin: 8px 0;
 }
 
@@ -84,7 +91,7 @@ input.title {
 .ember-power-select-trigger {
   width: 162px;
   margin: 5px 10px 15px 0;
-  padding: 4px 0 2px 1px;
+  padding: 2px 0 0 1px;
   border-radius: 0;
   font-size: 13px;
 }

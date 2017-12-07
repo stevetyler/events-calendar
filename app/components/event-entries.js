@@ -3,7 +3,7 @@ import moment from 'moment';
 const { computed } = Ember;
 
 export default Ember.Component.extend({
-  classNames: ['event-entry'],
+  classNames: ['event-entries'],
   filteredEvents: computed('events.[]', function() {
     return this.get('events').filter(e => {
       const formatCurrent = moment(e.get('startDate')).format('YYYY-MM-DD');
