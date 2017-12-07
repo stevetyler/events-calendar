@@ -3,11 +3,27 @@
 
 <form {{action 'saveEvent' on='submit'}}>
 
+  {{input
+    class="title"
+    placeholder="Title"
+    value=newEvent.title
+  }}
+
+  {{input
+    placeholder="Subject"
+    value=newEvent.subject
+  }}
+
+  {{input
+    placeholder="Teacher"
+    value=newEvent.teacher
+  }}
+
   {{#power-select
     selected=selectedStartDate
     options=weekDates
     onchange=(action 'setDate' 'startDate')
-    placeholder='select a day'
+    placeholder='Start Day'
     as |date|}}
       {{moment-format date 'dddd'}}
   {{/power-select}}
@@ -16,12 +32,12 @@
     selected=selectedEndDate
     options=filteredWeekDates
     onchange=(action 'setDate' 'endDate')
-    placeholder='select a day'
+    placeholder='End Day'
     as |date|}}
       {{moment-format date 'dddd'}}
   {{/power-select}}
 
-  {{textarea cols="35" rows="10" placeholder="Description" value=newEvent.title}}
+  {{!textarea cols="35" rows="10" placeholder="description" value=newEvent.title}}
 
-  <button type="submit">Save</button>
+  <button type="submit" class="save">Save</button>
 </form>
