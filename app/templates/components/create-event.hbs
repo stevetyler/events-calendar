@@ -1,14 +1,27 @@
 
 <h2>Create New Event</h2>
 
-<form onsubmit={{action 'saveEvent'}}>
-  {{select-date label="Start"}}
-  {{select-date label="End"}}
-  <textarea cols="35" rows="10" placeholder="Description"></textarea>
+<form {{action 'saveEvent' on='submit'}}>
 
-  <button type=onsubmit>Save</button>
+  {{#power-select
+    selected=selectedStartDate
+    options=weekDates
+    onchange=(action 'setDate' 'startDate')
+    placeholder='select a day'
+    as |date|}}
+      {{moment-format date 'dddd'}}
+  {{/power-select}}
+
+  {{#power-select
+    selected=selectedEndDate
+    options=filteredWeekDates
+    onchange=(action 'setDate' 'endDate')
+    placeholder='select a day'
+    as |date|}}
+      {{moment-format date 'dddd'}}
+  {{/power-select}}
+
+  {{textarea cols="35" rows="10" placeholder="Description" value=newEvent.title}}
+
+  <button type="submit">Save</button>
 </form>
-
-
-{{#if isCreateEventVisible}}
-{{/if}}
