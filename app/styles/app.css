@@ -89,6 +89,11 @@ input.title {
   font-size: 13px;
 }
 
+.ember-power-select-search-input {
+  display: none;
+  margin-bottom: 0;
+}
+
 .create-event button {
   font-size: 12px;
   display: block;
