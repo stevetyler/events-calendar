@@ -68,9 +68,10 @@ main {
 }
 
 input {
+  border: 1px solid #AAA;
   margin: 0 10px 25px 0;
   padding: 5px 8px;
-  width: 145px;
+  width: 146px;
   font-size: 13px;
 }
 
