@@ -1,7 +1,4 @@
 module.exports = {
-  ecmaFeatures: {
-    modules: true,
-  },
   globals: {
     server: true,
   },
