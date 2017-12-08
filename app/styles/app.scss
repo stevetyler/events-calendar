@@ -4,6 +4,8 @@ $title-background-color: #15283f;
 $primary-border-color: #BBB;
 $secondary-border-color: #777;
 $primary-background-color: #E0E8E8;
+$secondary-background-color: #B1BFBF;
+$current-day-title-color: #7DCB7D;
 
 body {
   font-family: 'helvetica', 'sans-serif';
@@ -31,7 +33,11 @@ main {
   background-color: $primary-background-color;
 
   &.is-current-day h3 {
-    color: green;
+    color: $current-day-title-color;
+  }
+
+  &.is-current-day  {
+    background-color: $secondary-background-color;
   }
 
   .day-title {
