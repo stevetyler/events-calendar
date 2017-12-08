@@ -11,6 +11,7 @@ export default Ember.Controller.extend({
     let dateArray = [];
     let startDate = this.get('startDate');
     let endDate = this.get('endDate');
+    
     while (startDate <= endDate) {
       dateArray.push( moment(startDate).format('YYYY-MM-DD') );
       startDate = moment(startDate).add(1, 'days');

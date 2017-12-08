@@ -6,8 +6,9 @@ export default Ember.Component.extend({
   classNames: ['entries'],
   filteredEvents: computed('events.[]', function() {
     return this.get('events').filter(e => {
-      const formatCurrent = moment(e.get('startDate')).format('YYYY-MM-DD');
-      const formatDate = moment(this.get('date')).format('YYYY-MM-DD');
+      let formatCurrent = moment(e.get('startDate')).format('YYYY-MM-DD');
+      let formatDate = moment(this.get('date')).format('YYYY-MM-DD');
+
       return formatCurrent === formatDate && !e.get('isNew');
     });
   })
