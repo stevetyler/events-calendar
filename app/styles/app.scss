@@ -1,6 +1,7 @@
 @import "ember-power-select";
 
 $title-background-color: #15283f;
+$title-color: #E0E8E8;
 $primary-border-color: #BBB;
 $secondary-border-color: #777;
 $primary-background-color: #E0E8E8;
@@ -46,7 +47,7 @@ main {
     text-align: center;
     border-bottom: 1px solid $primary-border-color;
     background-color: $title-background-color;
-    color: white;
+    color: $title-color;
   }
 
   .day-body {
