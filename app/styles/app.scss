@@ -6,6 +6,8 @@ $secondary-border-color: #777;
 $primary-background-color: #E0E8E8;
 $secondary-background-color: #B1BFBF;
 $current-day-title-color: #7DCB7D;
+$entry-background-color: #FABD4E;
+$entry-hover-background-color: #FFA500;
 
 body {
   font-family: 'helvetica', 'sans-serif';
@@ -65,7 +67,7 @@ main {
     flex-direction: column;
     margin-bottom: 10px;
     padding: 5px 0 5px 10px;
-    background-color: orange;
+    background-color: $entry-background-color;
     opacity: 0.85;
     outline: 1px solid $primary-border-color;
     word-wrap: break-word;
@@ -77,13 +79,13 @@ main {
     }
 
     &[class*="days-"]:hover { z-index: 1; }
-    &.days-1:hover { width: 120px; opacity: 1; outline: 1px solid $secondary-border-color; }
-    &.days-2:hover { width: 270px; opacity: 1; outline: 1px solid $secondary-border-color; }
-    &.days-3:hover { width: 420px; opacity: 1; outline: 1px solid $secondary-border-color; }
-    &.days-4:hover { width: 570px; opacity: 1; outline: 1px solid $secondary-border-color; }
-    &.days-5:hover { width: 720px; opacity: 1; outline: 1px solid $secondary-border-color; }
-    &.days-6:hover { width: 870px; opacity: 1; outline: 1px solid $secondary-border-color; }
-    &.days-7:hover { width: 1020px; opacity: 1; outline: 1px solid $secondary-border-color; }
+    &.days-1:hover { width: 120px; opacity: 1; outline: 1px solid $secondary-border-color; background-color: $entry-hover-background-color;}
+    &.days-2:hover { width: 270px; opacity: 1; outline: 1px solid $secondary-border-color; background-color: $entry-hover-background-color;}
+    &.days-3:hover { width: 420px; opacity: 1; outline: 1px solid $secondary-border-color; background-color: $entry-hover-background-color;}
+    &.days-4:hover { width: 570px; opacity: 1; outline: 1px solid $secondary-border-color; background-color: $entry-hover-background-color;}
+    &.days-5:hover { width: 720px; opacity: 1; outline: 1px solid $secondary-border-color; background-color: $entry-hover-background-color;}
+    &.days-6:hover { width: 870px; opacity: 1; outline: 1px solid $secondary-border-color; background-color: $entry-hover-background-color;}
+    &.days-7:hover { width: 1020px; opacity: 1; outline: 1px solid $secondary-border-color; background-color: $entry-hover-background-color;}
   }
 
   .entries {
