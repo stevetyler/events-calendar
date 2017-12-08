@@ -1,5 +1,10 @@
 @import "ember-power-select";
 
+$title-background-color: #15283f;
+$primary-border-color: #BBB;
+$secondary-border-color: #777;
+$primary-background-color: #E0E8E8;
+
 body {
   font-family: 'helvetica', 'sans-serif';
   font-size: small;
@@ -15,22 +20,24 @@ main {
   overflow: hidden;
   display: flex;
   flex-wrap: nowrap;
-  outline: 1px solid #BBB;
+  outline: 1px solid $primary-border-color;
 }
 
 .day {
   display: flex;
   flex-direction: column;
   width: calc(100% / 7);
-  outline: 1px solid #BBB;
-  background-color: #e0e8e8;
+  outline: 1px solid $primary-border-color;
+  background-color: $primary-background-color;
 
-  &.is-current-day h3 { color: green; }
+  &.is-current-day h3 {
+    color: green;
+  }
 
   .day-title {
     text-align: center;
-    border-bottom: 1px solid #BBB;
-    background-color: #15283f;
+    border-bottom: 1px solid $primary-border-color;
+    background-color: $title-background-color;
     color: white;
   }
 
@@ -53,23 +60,24 @@ main {
     margin-bottom: 10px;
     padding: 5px 0 5px 10px;
     background-color: orange;
-    opacity: 1;
-    outline: 1px solid #AAA;
+    opacity: 0.85;
+    outline: 1px solid $primary-border-color;
     word-wrap: break-word;
+    width: 120px;
+    cursor: pointer;
 
-    .is-selected {
-      opacity: 1;
-      z-index: 100;
+    &[class*="days-"] {
+      transition: all 0.3s ease;
     }
 
     &[class*="days-"]:hover { z-index: 1; }
-    &.days-1:hover { width: 120px; }
-    &.days-2:hover { width: 270px; }
-    &.days-3:hover { width: 420px; }
-    &.days-4:hover { width: 570px; }
-    &.days-5:hover { width: 720px; }
-    &.days-6:hover { width: 870px; }
-    &.days-7:hover { width: 1020px; }
+    &.days-1:hover { width: 120px; opacity: 1; outline: 1px solid $secondary-border-color; }
+    &.days-2:hover { width: 270px; opacity: 1; outline: 1px solid $secondary-border-color; }
+    &.days-3:hover { width: 420px; opacity: 1; outline: 1px solid $secondary-border-color; }
+    &.days-4:hover { width: 570px; opacity: 1; outline: 1px solid $secondary-border-color; }
+    &.days-5:hover { width: 720px; opacity: 1; outline: 1px solid $secondary-border-color; }
+    &.days-6:hover { width: 870px; opacity: 1; outline: 1px solid $secondary-border-color; }
+    &.days-7:hover { width: 1020px; opacity: 1; outline: 1px solid $secondary-border-color; }
   }
 
   .entries {
@@ -83,11 +91,11 @@ main {
 }
 
 .create-event {
-  border: 1px solid #BBB;
+  border: 1px solid $primary-border-color;;
   margin: 30px 0;
   padding: 10px 20px 30px 30px;
   width: 350px;
-  background-color: #e0e8e8;
+  background-color: $primary-background-color;
 
   form {
     display: flex;
@@ -95,7 +103,7 @@ main {
   }
 
   input {
-    border: 1px solid #AAA;
+    border: 1px solid $primary-border-color;
     margin: 0 10px 25px 0;
     padding: 5px 8px;
     width: 146px;
