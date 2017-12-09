@@ -2,7 +2,6 @@ import DS from 'ember-data';
 import attr from 'ember-data/attr';
 import Ember from 'ember';
 import moment from 'moment';
-
 const { computed } = Ember;
 
 export default DS.Model.extend({

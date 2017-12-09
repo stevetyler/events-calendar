@@ -1,5 +1,5 @@
 {{#each filteredEvents as |event|}}
-  <div class="entry days-{{event.dayDuration}}">
+  <div class="entry days-{{displayedDuration}}">
     <span>{{event.title}} ({{event.dayDuration}}day{{#if (gt event.dayDuration 1)}}s{{/if}})</span>
     <h4>{{event.subject}}</h4>
     <span>{{event.teacher}}</span>

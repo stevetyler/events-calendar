@@ -11,5 +11,15 @@ export default Ember.Component.extend({
 
       return formatCurrent === formatDate && !e.get('isNew');
     });
+  }),
+  displayedDuration: computed('event', 'weekdates', function() {
+    let weekdates = this.get('weekDates'); //string
+    let eventMoment = moment(this.get('event'));
+    let lastWeekDay = weekdates[weekdates.length - 1];
+    let lastWeekDayMoment = moment(lastWeekDay);
+    // convert string to moment obj
+    //moment.duration(end.diff(start));
+
+    debugger;
   })
 });

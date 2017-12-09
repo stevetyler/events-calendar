@@ -4,7 +4,10 @@
 
   <div class="week">
     {{#each weekDates as |date|}}
-      {{#events-day date=date as |day|}}
+      {{#events-day
+        date=date
+        weekDates=weekDates
+        as |day|}}
         {{#day.title}}
           <h3>{{moment-format date 'dddd'}}</h3>
           <h3>{{moment-format date 'Do MMM'}}</h3>
@@ -13,6 +16,7 @@
           {{event-entries
             events=model
             date=date
+            weekDates=weekDates
           }}
         {{/day.body}}
       {{/events-day}}
