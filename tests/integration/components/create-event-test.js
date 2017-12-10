@@ -11,14 +11,7 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{create-event}}`);
 
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#create-event}}
-      template block text
-    {{/create-event}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$('h2').text().trim(), 'Create New Event');
+  assert.equal(this.$("button[type='submit']").text().trim(), 'Save');
+  assert.equal(this.$("button[type='reset']").text().trim(), 'Clear');
 });
