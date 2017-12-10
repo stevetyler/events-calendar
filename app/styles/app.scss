@@ -1,14 +1,14 @@
 @import "ember-power-select";
 
-$title-background-color: #15283f;
+$title-bg-color: #15283f;
 $title-color: #E0E8E8;
 $primary-border-color: #BBB;
 $secondary-border-color: #777;
-$primary-background-color: #E0E8E8;
-$secondary-background-color: #B1BFBF;
+$primary-bg-color: #E0E8E8;
+$secondary-bg-color: #B1BFBF;
 $current-day-title-color: #7DCB7D;
-$entry-background-color: #FABD4E;
-$entry-hover-background-color: #FFA500;
+$entry-bg-color: #FABD4E;
+$entry-hover-bg-color: #FFA500;
 
 body {
   font-family: 'helvetica', 'sans-serif';
@@ -33,20 +33,20 @@ main {
   flex-direction: column;
   width: calc(100% / 7);
   outline: 1px solid $primary-border-color;
-  background-color: $primary-background-color;
+  background-color: $primary-bg-color;
 
   &.is-current-day h3 {
     color: $current-day-title-color;
   }
 
   &.is-current-day  {
-    background-color: $secondary-background-color;
+    background-color: $secondary-bg-color;
   }
 
   .day-title {
     text-align: center;
     border-bottom: 1px solid $primary-border-color;
-    background-color: $title-background-color;
+    background-color: $title-bg-color;
     color: $title-color;
   }
 
@@ -68,7 +68,7 @@ main {
     flex-direction: column;
     margin-bottom: 10px;
     padding: 5px 0 5px 10px;
-    background-color: $entry-background-color;
+    background-color: $entry-bg-color;
     opacity: 0.85;
     outline: 1px solid $primary-border-color;
     word-wrap: break-word;
@@ -80,13 +80,13 @@ main {
     }
 
     &[class*="days-"]:hover { z-index: 1; }
-    &.days-1:hover { width: 120px; opacity: 1; outline: 1px solid $secondary-border-color; background-color: $entry-hover-background-color;}
-    &.days-2:hover { width: 270px; opacity: 1; outline: 1px solid $secondary-border-color; background-color: $entry-hover-background-color;}
-    &.days-3:hover { width: 420px; opacity: 1; outline: 1px solid $secondary-border-color; background-color: $entry-hover-background-color;}
-    &.days-4:hover { width: 570px; opacity: 1; outline: 1px solid $secondary-border-color; background-color: $entry-hover-background-color;}
-    &.days-5:hover { width: 720px; opacity: 1; outline: 1px solid $secondary-border-color; background-color: $entry-hover-background-color;}
-    &.days-6:hover { width: 870px; opacity: 1; outline: 1px solid $secondary-border-color; background-color: $entry-hover-background-color;}
-    &.days-7:hover { width: 1020px; opacity: 1; outline: 1px solid $secondary-border-color; background-color: $entry-hover-background-color;}
+    &.days-1:hover { width: 120px; opacity: 1; outline: 1px solid $secondary-border-color; background-color: $entry-hover-bg-color;}
+    &.days-2:hover { width: 270px; opacity: 1; outline: 1px solid $secondary-border-color; background-color: $entry-hover-bg-color;}
+    &.days-3:hover { width: 420px; opacity: 1; outline: 1px solid $secondary-border-color; background-color: $entry-hover-bg-color;}
+    &.days-4:hover { width: 570px; opacity: 1; outline: 1px solid $secondary-border-color; background-color: $entry-hover-bg-color;}
+    &.days-5:hover { width: 720px; opacity: 1; outline: 1px solid $secondary-border-color; background-color: $entry-hover-bg-color;}
+    &.days-6:hover { width: 870px; opacity: 1; outline: 1px solid $secondary-border-color; background-color: $entry-hover-bg-color;}
+    &.days-7:hover { width: 1020px; opacity: 1; outline: 1px solid $secondary-border-color; background-color: $entry-hover-bg-color;}
   }
 
   .entries {
@@ -104,7 +104,7 @@ main {
   margin: 30px 0;
   padding: 10px 20px 30px 30px;
   width: 350px;
-  background-color: $primary-background-color;
+  background-color: $primary-bg-color;
 
   form {
     display: flex;
