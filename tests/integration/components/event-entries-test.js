@@ -9,9 +9,7 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  //this.set('events', );
-
-  this.render(hbs`{{event-entries}}`);
+  this.render(hbs`{{event-entries filteredEvents=FilteredEvents}}`);
 
   assert.equal(this.$().text().trim(), '');
 
