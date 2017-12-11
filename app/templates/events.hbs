@@ -23,5 +23,7 @@
     {{/each}}
   </div>
 
-  {{create-event weekDates=weekDates}}
+  {{#link-to 'events.create'}}<h3>Create New Event</h3>{{/link-to}}
+
+  {{outlet}}
 </main>
