@@ -10,11 +10,13 @@
   }}
 
   {{input
+    class="subject"
     placeholder="Subject"
     value=newEvent.subject
   }}
 
   {{input
+    class="teacher"
     placeholder="Teacher"
     value=newEvent.teacher
   }}
@@ -24,6 +26,7 @@
     options=weekDates
     onchange=(action 'setDate' 'startDate')
     placeholder='Start Day'
+    triggerClass='start-date'
     as |date|}}
       {{moment-format date 'dddd'}}
   {{/power-select}}
@@ -33,6 +36,7 @@
     options=filteredWeekDates
     onchange=(action 'setDate' 'endDate')
     placeholder='End Day'
+    triggerClass='end-date'
     as |date|}}
       {{moment-format date 'dddd'}}
   {{/power-select}}
