@@ -6,7 +6,7 @@ moduleForAcceptance('Acceptance | create');
 
 test('visiting /events', function(assert) {
   let weekDates = [];
-  
+
   for (let i = 1; i <= 7; i++) {
     weekDates.push(moment().isoWeekday(i));
   }
@@ -18,7 +18,14 @@ test('visiting /events', function(assert) {
       title: 'Exams',
       subject: '1A Chemistry',
       teacher: 'Mr Perkins',
-      duration: '3days'
+      duration: function() {
+        let start = moment(this.startDate);
+        let end = moment(this.endDate);
+        let duration = moment.duration(end.diff(start));
+        let dayDuration = duration.asDays();
+
+        return Math.floor(dayDuration) + 1;
+      }
     },
     {
       startDate: moment().isoWeekday(3),
@@ -26,7 +33,14 @@ test('visiting /events', function(assert) {
       teacher: 'Mr Davis',
       subject: '1B Physics',
       title: 'Exams',
-      duration: '2days'
+      duration: function() {
+        let start = moment(this.startDate);
+        let end = moment(this.endDate);
+        let duration = moment.duration(end.diff(start));
+        let dayDuration = duration.asDays();
+
+        return Math.floor(dayDuration) + 1;
+      }
     }
   ];
 
@@ -46,7 +60,7 @@ test('visiting /events', function(assert) {
     });
 
     events.forEach((event, i) => {
-      assert.equal(find(`.entry:eq(${i}) span:eq(0)`).text().trim(), `${event.title} (${event.duration})`, 'correct title');
+      assert.equal(find(`.entry:eq(${i}) span:eq(0)`).text().trim(), `${event.title} (${event.duration()}days)`, 'correct title');
       assert.equal(find(`.entry:eq(${i}) h4`).text().trim(), `${event.subject}`, 'correct subject');
       assert.equal(find(`.entry:eq(${i}) span:eq(1)`).text().trim(), `${event.teacher}`, 'correct teacher');
     });
