@@ -6,11 +6,6 @@ moduleForAcceptance('Acceptance | create');
 
 test('visiting /events', function(assert) {
   let weekDates = [];
-
-  for (let i = 1; i <= 7; i++) {
-    weekDates.push(moment().isoWeekday(i));
-  }
-
   let events = [
     {
       startDate: moment().isoWeekday(1),
@@ -44,6 +39,10 @@ test('visiting /events', function(assert) {
     }
   ];
 
+  for (let i = 1; i <= 7; i++) {
+    weekDates.push(moment().isoWeekday(i));
+  }
+
   events.forEach(event => {
     server.create('event', event);
   });
@@ -64,5 +63,27 @@ test('visiting /events', function(assert) {
       assert.equal(find(`.entry:eq(${i}) h4`).text().trim(), `${event.subject}`, 'correct subject');
       assert.equal(find(`.entry:eq(${i}) span:eq(1)`).text().trim(), `${event.teacher}`, 'correct teacher');
     });
+  });
+
+  andThen(() => {
+    fillIn('form .title', 'My new event');
+    fillIn('form .subject', 'My new subject');
+    fillIn('form .teacher', 'Mr Tyler');
+
+    click('.start-date');
+    selectChoose('.start-date', 'Saturday');
+    selectChoose('.end-date', 'Sunday');
+    click('.save');
+  });
+
+  andThen(() => {
+    let i = events.length;
+    assert.equal(find(`.entry:eq(${i}) span:eq(0)`).text().trim(), 'My new event (2days)', 'correct title');
+    assert.equal(find(`.entry:eq(${i}) h4`).text().trim(), 'My new subject', 'correct subject');
+    assert.equal(find(`.entry:eq(${i}) span:eq(1)`).text().trim(), 'Mr Tyler', 'correct teacher');
+
+    assert.equal(find('form .title').text().trim(), '', 'title field cleared');
+    assert.equal(find('form .subject').text().trim(), '', 'subject field cleared');
+    assert.equal(find('form .teacher').text().trim(), '', 'teacher field cleared');
   });
 });
