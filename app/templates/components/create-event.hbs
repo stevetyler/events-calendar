@@ -42,5 +42,12 @@
   {{/power-select}}
 
   <button type="submit" class="save">Save</button>
+
   <button type="reset" onclick={{action 'clearSelections'}}>Clear</button>
 </form>
+
+{{#if hasError}}
+<div class="error">
+  <p>Please select a start and end date</p>
+</div>
+{{/if}}
