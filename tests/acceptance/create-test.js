@@ -66,8 +66,8 @@ test('visiting /events', function(assert) {
   });
 
   andThen(() => {
-    fillIn('form .title', 'My new event');
-    fillIn('form .subject', 'My new subject');
+    fillIn('form .title', 'Test event');
+    fillIn('form .subject', 'Test subject');
     fillIn('form .teacher', 'Mr Tyler');
 
     click('.start-date');
@@ -78,12 +78,12 @@ test('visiting /events', function(assert) {
 
   andThen(() => {
     let i = events.length;
-    assert.equal(find(`.entry:eq(${i}) span:eq(0)`).text().trim(), 'My new event (2days)', 'correct title');
-    assert.equal(find(`.entry:eq(${i}) h4`).text().trim(), 'My new subject', 'correct subject');
-    assert.equal(find(`.entry:eq(${i}) span:eq(1)`).text().trim(), 'Mr Tyler', 'correct teacher');
+    assert.equal(find(`.entry:eq(${i}) span:eq(0)`).text().trim(), 'Test event (2days)', 'Correct title');
+    assert.equal(find(`.entry:eq(${i}) h4`).text().trim(), 'Test subject', 'Correct subject');
+    assert.equal(find(`.entry:eq(${i}) span:eq(1)`).text().trim(), 'Mr Tyler', 'Correct teacher');
 
-    assert.equal(find('form .title').text().trim(), '', 'title field cleared');
-    assert.equal(find('form .subject').text().trim(), '', 'subject field cleared');
-    assert.equal(find('form .teacher').text().trim(), '', 'teacher field cleared');
+    assert.equal(find('form .title').text().trim(), '', 'Title field cleared');
+    assert.equal(find('form .subject').text().trim(), '', 'Subject field cleared');
+    assert.equal(find('form .teacher').text().trim(), '', 'Teacher field cleared');
   });
 });
