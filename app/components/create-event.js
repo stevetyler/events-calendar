@@ -28,7 +28,7 @@ export default Ember.Component.extend({
       this.set('hasError', false);
     },
     saveEvent() {
-      if (!this.get('selectedStartDate') || !this.get('selectedEndDate')) {
+      if (!this.get('newEvent.title') || !this.get('selectedStartDate') || !this.get('selectedEndDate')) {
         this.set('hasError', true);
         return;
       }
