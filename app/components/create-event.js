@@ -38,7 +38,8 @@ export default Ember.Component.extend({
         this.setProperties({
           newEvent: cleanRecord,
           selectedStartDate: null,
-          selectedEndDate: null
+          selectedEndDate: null,
+          hasError: false
         });
       });
     },
