@@ -72,6 +72,7 @@ test('visiting /events', function(assert) {
 
     click('.start-date');
     selectChoose('.start-date', 'Saturday');
+    click('.end-date');
     selectChoose('.end-date', 'Sunday');
     click('.save');
   });
@@ -85,5 +86,44 @@ test('visiting /events', function(assert) {
     assert.equal(find('form .title').text().trim(), '', 'Title field cleared');
     assert.equal(find('form .subject').text().trim(), '', 'Subject field cleared');
     assert.equal(find('form .teacher').text().trim(), '', 'Teacher field cleared');
+  });
+
+  andThen(() => {
+    fillIn('form .title', 'Test event');
+    fillIn('form .subject', 'Test subject');
+    fillIn('form .teacher', 'Mr Tyler');
+    click('.save');
+  });
+
+  andThen(() => {
+    assert.equal(find('.error').text().trim(), 'Please enter missing fields', 'Error shown for blank dates');
+    fillIn('form .title', 'Test event');
+    fillIn('form .subject', 'Test subject');
+    fillIn('form .teacher', 'Mr Tyler');
+
+    click('.start-date');
+    selectChoose('.start-date', 'Saturday');
+    click('.save');
+  });
+  andThen(() => {
+    assert.equal(find('.error').text().trim(), 'Please enter missing fields', 'Error shown for missing end date');
+    fillIn('form .title', 'Test event');
+    fillIn('form .subject', 'Test subject');
+    fillIn('form .teacher', 'Mr Tyler');
+
+    click('.end-date');
+    selectChoose('.end-date', 'Saturday');
+    click('.save');
+  });
+  andThen(() => {
+    assert.equal(find('.error').text().trim(), 'Please enter missing fields', 'Error shown for missing start date');
+    click('.start-date');
+    selectChoose('.start-date', 'Saturday');
+    click('.end-date');
+    selectChoose('.end-date', 'Sunday');
+    click('.save');
+  });
+  andThen(() => {
+    assert.equal(find('.error').text().trim(), 'Please enter missing fields', 'Error shown for missing title');
   });
 });
