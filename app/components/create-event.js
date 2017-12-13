@@ -18,14 +18,20 @@ export default Ember.Component.extend({
       return weekDates.slice(selectedDateIndex, weekDates.length);
     }
   }),
+  hasError: false,
   store: service(),
 
   actions: {
     clearSelections() {
       this.set('selectedStartDate', null);
       this.set('selectedEndDate', null);
+      this.set('hasError', false);
     },
     saveEvent() {
+      if (!this.get('selectedStartDate') || !this.get('selectedEndDate')) {
+        this.set('hasError', true);
+        return;
+      }
       this.get('newEvent').save().then(() => {
         const cleanRecord = this.get('store').createRecord('event');
 
