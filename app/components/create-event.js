@@ -23,9 +23,14 @@ export default Ember.Component.extend({
 
   actions: {
     clearSelections() {
-      this.set('selectedStartDate', null);
-      this.set('selectedEndDate', null);
-      this.set('hasError', false);
+      this.setProperties({
+        hasError: false,
+        selectedStartDate: null,
+        selectedEndDate: null,
+        'newEvent.title': '',
+        'newEvent.subject': '',
+        'newEvent.teacher': ''
+      });
     },
     saveEvent() {
       if (!this.get('newEvent.title') || !this.get('selectedStartDate') || !this.get('selectedEndDate')) {
